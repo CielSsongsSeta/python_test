@@ -1,2 +1,2 @@
 # python_test
-python update
+python 기초 과정~openCV
