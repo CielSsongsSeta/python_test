@@ -47,7 +47,7 @@ def ShowCam():
         # 동영상을 성공적으로 읽은 경우
         # 보여주기 전에 face, 얼굴을 찾는다
         if success:
-            from_bgr_to_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) #opencv는 블루그린레드가 기본이어서 바꿔준다. 
+            from_bgr_to_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             face = fd.process(from_bgr_to_rgb)
 
             if face.detections:
@@ -59,11 +59,11 @@ def ShowCam():
                         int(fd_box.width*img.shape[1]), int(fd_box.height*img.shape[0])
                 cv2.rectangle(img, box, (255,0,255),2)
                 cv2.putText(img,f'{round(detection.score[0]*100,1)}%',(box[0], box[1]),cv2.FONT_ITALIC,1,(255,0,255),2)
-                #cv2.putText(img,f'hello',(0,50),cv2.FONT_ITALIC,1,(255,0,255),2)
+                cv2.putText(img,f'seta',(0,20),cv2.FONT_ITALIC,1,(0,0,0),2)
 
             cv2.imshow('title', img)
             # 무한대기
-        if cv2.waitKey(1) & 0xFF == 27 : # 27 == esc
+        if cv2.waitKey(20) & 0xFF == 27 : # 27 == esc
             # ESC키를 눌러 종료
             break
 
